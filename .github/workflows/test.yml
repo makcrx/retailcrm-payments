@@ -4,12 +4,12 @@ on: [push]
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v1
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: npm ci
       - name: Unit Tests
-        run: yarn test:unit
+        run: npm run test:unit
       - name: E2E tests
-        run: yarn test:e2e --headless
+        run: npm run test:e2e -- --headless
