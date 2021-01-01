@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Unit Tests
         run: yarn test:unit
       - name: E2E tests
